@@ -1,5 +1,92 @@
 package main
 
+import "fmt"
+
+func main() {
+	product := "kayak"
+
+	for i, c := range product {
+		fmt.Println("Index:", i, "Caharacter:", string(c))
+	}
+
+	for i := range product {
+		fmt.Println("Index:", i)
+	}
+
+	for _, c := range product {
+		fmt.Println("Caharacter:", string(c))
+	}
+}
+
+/* package main
+
+import "fmt"
+
+func main() {
+	for counter := 0; counter <= 3; counter++ {
+		if counter == 2 {
+			continue
+		}
+		fmt.Println("Counter:", counter)
+	}
+} */
+
+/* package main
+
+import (
+	"fmt"
+)
+
+func main() {
+	for counter := 0; true; counter++ {
+		fmt.Println("Counter:", counter)
+		if counter > 3 {
+			break
+		}
+	}
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	for counter := 0; counter <= 3; counter++ {
+		fmt.Println("Counter: ", counter)
+	}
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	counter := 0
+
+	for counter <= 3 {
+		fmt.Println("Counter: ", counter)
+		counter++
+	}
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	counter := 0
+
+	for {
+		fmt.Println("Counter: ", counter)
+		counter++
+		if counter > 3 {
+			break
+		}
+	}
+} */
+
+/* package main
+
 import (
 	"fmt"
 	"strconv"
@@ -14,7 +101,7 @@ func main() {
 
 		fmt.Println("Parsed value", kayakPrice)
 	}
-}
+} */
 
 /* package main
 
