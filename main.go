@@ -3,6 +3,63 @@ package main
 import "fmt"
 
 func main() {
+
+	counter := 0
+
+target:
+	fmt.Println("Counter is:", counter)
+	counter++
+	if counter < 5 {
+		goto target
+	}
+}
+
+/* package main
+
+import "fmt"
+
+func main() {
+	product := "Kayak"
+
+	for i, c := range product {
+		switch c {
+		case 'x':
+			fmt.Println("Uppercase character")
+			fallthrough
+		case 't':
+			fmt.Println("x at position", i)
+		case 'u':
+			fmt.Println("y at index: ", i)
+		default:
+			fmt.Println("No cased character")
+		}
+
+	}
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+
+	product := "kayak"
+
+	for i, c := range product {
+		switch c {
+		case 'k':
+			fmt.Println("k at position", i)
+		case 'y':
+			fmt.Println("y at position", i)
+		}
+	}
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
 	product := "kayak"
 
 	for i, c := range product {
@@ -16,7 +73,7 @@ func main() {
 	for _, c := range product {
 		fmt.Println("Caharacter:", string(c))
 	}
-}
+} */
 
 /* package main
 
