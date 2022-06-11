@@ -3,15 +3,13 @@ package main
 import "fmt"
 
 func main() {
+	names := [4]string{"Gurcan", "Gamze", "Arin", "Elis"}
 
-	counter := 0
+	someNames := names[1:3]
+	allNames := names[:]
 
-target:
-	fmt.Println("Counter is:", counter)
-	counter++
-	if counter < 5 {
-		goto target
-	}
+	fmt.Println(someNames)
+	fmt.Println(allNames)
 }
 
 /* package main
@@ -19,21 +17,94 @@ target:
 import "fmt"
 
 func main() {
-	product := "Kayak"
+	names := make([]string, 2, 4)
 
-	for i, c := range product {
-		switch c {
-		case 'x':
-			fmt.Println("Uppercase character")
-			fallthrough
-		case 't':
-			fmt.Println("x at position", i)
-		case 'u':
-			fmt.Println("y at index: ", i)
-		default:
-			fmt.Println("No cased character")
-		}
+	names[0] = "Gurcan"
+	names[1] = "Gamze"
 
+	appendedNames := append(names, "Arin", "Elis")
+
+	names[0] = "Gugu"
+
+	fmt.Println(names)
+	fmt.Println(appendedNames)
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	names := make([]string, 3, 6)
+
+	names[0] = "Gamze"
+	names[1] = "Arin"
+	names[2] = "Elis"
+
+	fmt.Println(names)
+	fmt.Println(len(names))
+	fmt.Println(cap(names))
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	names := []string{"Gamze", "Arin"}
+
+	apNames := append(names, "Elis")
+
+	names[0] = "Gurcan"
+
+	fmt.Println(names)
+	fmt.Println(apNames)
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	names := []string{"Gamze", "Arin"}
+	names = append(names, "Gurcan", "Elis")
+
+	fmt.Println(names)
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	names := []string{"Gamze", "Arin", "Elis"}
+
+	fmt.Println(names)
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	names := make([]string, 3)
+
+	names[0] = "Gamze"
+	names[1] = "Arin"
+	names[2] = "Elis"
+
+	fmt.Println(names)
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	names := [4]string{"Gamze", "Gurcan", "Arin", "Elis"}
+
+	for index, name := range names {
+		fmt.Println("Index: ", index, "Value: ", name)
 	}
 } */
 
@@ -42,17 +113,12 @@ func main() {
 import "fmt"
 
 func main() {
+	names := [2]string{"Gamze", "Gurcan"}
+	names2 := [2]string{"Gurcan", "Gamze"}
 
-	product := "kayak"
+	same := names == names2
 
-	for i, c := range product {
-		switch c {
-		case 'k':
-			fmt.Println("k at position", i)
-		case 'y':
-			fmt.Println("y at position", i)
-		}
-	}
+	fmt.Println("Same::", same)
 } */
 
 /* package main
@@ -60,19 +126,14 @@ func main() {
 import "fmt"
 
 func main() {
-	product := "kayak"
+	names := [2]string{"Gamze", "Gurcan"}
 
-	for i, c := range product {
-		fmt.Println("Index:", i, "Caharacter:", string(c))
-	}
+	names2 := &names
 
-	for i := range product {
-		fmt.Println("Index:", i)
-	}
+	names[0] = "Arin"
 
-	for _, c := range product {
-		fmt.Println("Caharacter:", string(c))
-	}
+	fmt.Println(names)
+	fmt.Println(*names2)
 } */
 
 /* package main
@@ -80,27 +141,14 @@ func main() {
 import "fmt"
 
 func main() {
-	for counter := 0; counter <= 3; counter++ {
-		if counter == 2 {
-			continue
-		}
-		fmt.Println("Counter:", counter)
-	}
-} */
+	names := [2]string{"Gamze", "Gurcan"}
 
-/* package main
+	names2 := names
 
-import (
-	"fmt"
-)
+	names[0] = "Arin"
 
-func main() {
-	for counter := 0; true; counter++ {
-		fmt.Println("Counter:", counter)
-		if counter > 3 {
-			break
-		}
-	}
+	fmt.Println(names)
+	fmt.Println(names2)
 } */
 
 /* package main
@@ -108,9 +156,19 @@ func main() {
 import "fmt"
 
 func main() {
-	for counter := 0; counter <= 3; counter++ {
-		fmt.Println("Counter: ", counter)
-	}
+	names := [...]string{"Gamze", "Arin", "Elis"}
+
+	fmt.Println(names)
+}
+*/
+/* package main
+
+import "fmt"
+
+func main() {
+	names := [4]string{"Gurcan", "Gamze", "Arin", "Elis"}
+
+	fmt.Println(names)
 } */
 
 /* package main
@@ -118,80 +176,11 @@ func main() {
 import "fmt"
 
 func main() {
-	counter := 0
+	var names [4]string
+	names[0] = "Gurcan"
+	names[1] = "Gamze"
+	names[2] = "Arin"
+	names[3] = "Elis"
 
-	for counter <= 3 {
-		fmt.Println("Counter: ", counter)
-		counter++
-	}
-} */
-
-/* package main
-
-import "fmt"
-
-func main() {
-	counter := 0
-
-	for {
-		fmt.Println("Counter: ", counter)
-		counter++
-		if counter > 3 {
-			break
-		}
-	}
-} */
-
-/* package main
-
-import (
-	"fmt"
-	"strconv"
-)
-
-func main() {
-	priceString := "100"
-
-	if kayakPrice, err := strconv.Atoi(priceString); err != nil {
-		fmt.Println("Cannot Parse", priceString)
-	} else {
-
-		fmt.Println("Parsed value", kayakPrice)
-	}
-} */
-
-/* package main
-
-import "fmt"
-
-func main() {
-	price := 250
-
-	if price > 500 {
-		scopedVar := 500
-		fmt.Println("Price is higher than ", scopedVar)
-	} else if price <= 200 {
-		scopedVar := 200
-		fmt.Println("Price is lower than or equal ", scopedVar)
-	} else {
-		scopedVar := false
-		fmt.Println("Match", scopedVar)
-	}
-} */
-
-/* package main
-
-import "fmt"
-
-func main() {
-	price := 250
-
-	if price > 500 {
-		fmt.Println("Price is higher than 500")
-	} else if price <= 200 {
-		fmt.Println("Price is lower than or equal 200")
-	} else {
-		fmt.Println("Price is did not match")
-	}
-
+	fmt.Println(names)
 } */
