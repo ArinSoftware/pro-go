@@ -1,5 +1,115 @@
 package main
 
+import (
+	"fmt"
+	"strconv"
+)
+
+func main() {
+	var price []rune = []rune("€48.95")
+	var currency string = string(price[0])
+	var amountString string = string(price[1:])
+	amount, parseErr := strconv.ParseFloat(amountString, 64)
+	fmt.Println("Length:", len(price))
+	fmt.Println("Currency:", currency)
+	if parseErr == nil {
+		fmt.Println("Amount:", amount)
+	} else {
+		fmt.Println("Parse Error:", parseErr)
+	}
+}
+
+/* package main
+
+import (
+	"fmt"
+	"sort"
+)
+
+func main() {
+	products := map[string]float64{"kayak": 10.9, "hat": 2.1, "ceket": 0}
+
+	keys := make([]string, 0, len(products))
+
+	for key := range products {
+		keys = append(keys, key)
+	}
+
+	sort.Strings(keys)
+
+	for _, key := range keys {
+		fmt.Println("Key: ", key, "Value: ", products[key])
+	}
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	products := map[string]float64{"kayak": 10.9, "hat": 2.1}
+
+	delete(products, "hat")
+
+	value, ok := products["hat"]
+
+	if ok {
+		fmt.Println("Stored value", value)
+	} else {
+		fmt.Println("No stored value")
+	}
+}
+*/
+/* package main
+
+import "fmt"
+
+func main() {
+	 	products := make(map[string]float64, 10)
+
+	   	products["kazak"] = 25.2
+	   	products["ceket"] = 44.3
+
+	products := map[string]float64{"kazak": 25.3, "ceket": 44.3}
+
+	fmt.Println("Map size:", len(products))
+	fmt.Println("Price: ", products["kazak"])
+	fmt.Println("Price: ", products["ceket"])
+	fmt.Println("Price: ", products["xyz"])
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	products := []string{"p1", "p2", "p3", "p4"}
+	replacementProducts := []string{"r1", "r2"}
+
+	copy(replacementProducts, products)
+
+	fmt.Println(replacementProducts)
+	fmt.Println(products)
+} */
+
+/* package main
+
+import "fmt"
+
+func main() {
+	products := [4]string{"p1", "p2", "p3", "p4"}
+
+	allNames := products[1:]
+	someNames := make([]string, 2)
+
+	copy(someNames, allNames)
+
+	fmt.Println("All Names: ", allNames)
+	fmt.Println("Some Names: ", someNames)
+} */
+
+/* package main
+
 import "fmt"
 
 func main() {
@@ -10,7 +120,7 @@ func main() {
 
 	fmt.Println(someNames)
 	fmt.Println(allNames)
-}
+} */
 
 /* package main
 
